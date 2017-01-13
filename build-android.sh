@@ -15,7 +15,7 @@ cd vendor/openssl
 git clean -dfx && git checkout -f
 cd ../../
 
-archs=(armeabi armeabi-v7a arm64-v8a mips mips64 x86 x86_64)
+archs=(armeabi armeabi-v7a)
 
 openssl_config_options=$(cat config-params.txt)
 
@@ -26,7 +26,7 @@ for arch in ${archs[@]}; do
             _ANDROID_API="android-19"
             _ANDROID_TARGET_SELECT=arch-arm
             _ANDROID_ARCH=arch-arm
-            _ANDROID_EABI=arm-linux-androideabi-4.9
+            _ANDROID_EABI=arm-linux-androideabi-4.8
             configure_platform="android" ;;
         "armeabi-v7a")
             _ANDROID_API="android-19"
